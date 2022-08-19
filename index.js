@@ -1,7 +1,7 @@
-//import { DraggableItem, DroppableItem, DropZone, StaticItem} from "./lib/dnd/types.js";
-//import { init } from "/lib/dnd/dnd.js"
-import { infoButton } from "/codebochum-berg/lib/meta/infoButton.js"
-import { showInfoModal } from "/codebochum-berg/lib/meta/modal.js"
+//import { infoButton } from "/codebochum-berg/lib/meta/infoButton.js"
+//import { showInfoModal } from "/codebochum-berg/lib/meta/modal.js"
+import { infoButton } from "/lib/meta/infoButton.js"
+import { showInfoModal } from "/lib/meta/modal.js"
 
 /*
 let anchor = document.querySelector("#dnd-anchor");

@@ -29,7 +29,7 @@ body{
     width:20%;
     height:20%;
     background-color: white;
-    border-radius:30px;
+    border-radius:2vw;
     padding: 20px;
     font-size: 1vw;
     visibility: hidden;   
@@ -46,6 +46,7 @@ body{
 }
 
 .citylights{
+    fill:#231955;
     position: absolute;
     bottom: 0;
     filter: drop-shadow(0 0 40px #ffffff);
