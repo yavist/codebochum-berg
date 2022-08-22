@@ -1,7 +1,7 @@
-import { infoButton } from "/codebochum-berg/lib/meta/infoButton.js"
-import { showInfoModal } from "/codebochum-berg/lib/meta/modal.js"
-//import { infoButton } from "/lib/meta/infoButton.js"
-//import { showInfoModal } from "/lib/meta/modal.js"
+//import { infoButton } from "/codebochum-berg/lib/meta/infoButton.js"
+//import { showInfoModal } from "/codebochum-berg/lib/meta/modal.js"
+import { infoButton } from "/lib/meta/infoButton.js"
+import { showInfoModal } from "/lib/meta/modal.js"
 
 /*
 let anchor = document.querySelector("#dnd-anchor");
@@ -24,18 +24,45 @@ let wattenscheid_sound = new Audio('/audio/city.mp3');
 let suedwest_sound = new Audio('/audio/city.mp3');
 let ost_sound = new Audio('/audio/city.mp3');
 
+let orientation = "";
+const bubbles = document.querySelectorAll('.bubble');
+
+if (window.innerWidth<750) {
+    orientation = "portrait";
+    bubbles.forEach(bubble => {
+        bubble.classList.add("bubble_portrait")
+        bubble.classList.remove(bubble.id.replace("_bubble",""))
+    });
+} else {
+    orientation = "widescreen";
+    bubbles.forEach(bubble => {
+        bubble.classList.add("bubble_widescreen")
+    });
+    }
+
+
 
 const areas = document.querySelectorAll('.area');
 
 areas.forEach(area => {
   area.addEventListener('click', function handleClick(event) {
-    console.log('area clicked', event.target.id);
+    console.log('clicked', event.target.id);
     eval(event.target.id+"_sound").play()
     area.classList.toggle("dark")
-    document.querySelector("#"+event.target.id+"_bubble").classList.toggle("visible")
+    if(orientation=="widescreen"){
+        document.querySelector("#"+event.target.id+"_bubble").classList.toggle("visible")
+    } else{
+        //document.querySelector("#"+event.target.id+"_bubble").classList.remove(event.target.id)
+        document.querySelector("#"+event.target.id+"_bubble").classList.toggle("visible")
+    }
+    
     setTimeout(() => {
         area.classList.toggle("dark");
+        if(orientation=="widescreen"){
         document.querySelector("#"+event.target.id+"_bubble").classList.toggle("visible")
+        } else {
+            document.querySelector("#"+event.target.id+"_bubble").classList.toggle("invisible")
+        }
     }, 5000);
    
   });
